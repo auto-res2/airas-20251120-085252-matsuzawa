@@ -387,7 +387,9 @@ def main(cfg: DictConfig) -> None:  # noqa: D401
     assert run_cfg_file.exists(), f"Run-config not found: {run_cfg_file}"
 
     run_cfg = OmegaConf.load(run_cfg_file)
+    OmegaConf.set_struct(cfg, False)
     cfg = OmegaConf.merge(cfg, run_cfg)
+    OmegaConf.set_struct(cfg, True)
 
     # --------------- Mode-specific overrides ------------------------
     if cfg.mode == "trial":
