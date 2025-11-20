@@ -252,7 +252,66 @@
     "iterations": [
       {
         "iteration_id": 1,
-        "method": "μ-PACT (Micro-Adaptive, Parameter-Aware, Confidence-calibrated Training)\nCore additions to PAC-TURBO:\nA. Block-wise sequential test  –  Split the LoRA adapter weights into B disjoint blocks (e.g. one block per output column; B≈32 for rank-8 adapters).  Maintain running sums g_sum[b] and squared norms g2_sum[b] for each block.  Accept block b when its test statistic T_b ≥ q_δ(ρ).  The update fires when *all* blocks are accepted *or* GA_max is reached.  This exploits the fact that many blocks reach high SNR earlier, shrinking total GA by ~30 % in practice.\nB. Automatic step-length selection  –  Eliminate lr_base entirely.  After acceptance, estimate a local 1-step Lipschitz constant L̂ = (‖ḡ‖/‖Δθ_prev‖) computed from the ratio of current mean gradient norm to the previous parameter change.  Proven upper bound: expected loss decreases if step length η ≤ 2 cos(α)/L̂, where α = arccos ρ.  We therefore set\n        lr_k = min(η_max,  2·cos(α)/(L̂+ε) )\n  with η_max=5e-5 to cap rare outliers.  This removes one manual hyper-parameter while retaining PAC safety.\nC. Anisotropy-aware scaling  –  Inside each block, scale the update by √(T_b / q_δ) exactly as in PAC-TURBO, so cleaner blocks move farther while noisy ones remain conservative.\nD. Implementation   –  Needs only 2·B extra scalars (g2_sum, L̂ per block); no extra forward/backward passes.  End-to-end ≈23 lines of Python.\nDefault settings: δ=0.05, ρ=0.9, GA_max=8, B=32; all hardware-agnostic."
+        "method": "μ-PACT (Micro-Adaptive, Parameter-Aware, Confidence-calibrated Training)\nCore additions to PAC-TURBO:\nA. Block-wise sequential test  –  Split the LoRA adapter weights into B disjoint blocks (e.g. one block per output column; B≈32 for rank-8 adapters).  Maintain running sums g_sum[b] and squared norms g2_sum[b] for each block.  Accept block b when its test statistic T_b ≥ q_δ(ρ).  The update fires when *all* blocks are accepted *or* GA_max is reached.  This exploits the fact that many blocks reach high SNR earlier, shrinking total GA by ~30 % in practice.\nB. Automatic step-length selection  –  Eliminate lr_base entirely.  After acceptance, estimate a local 1-step Lipschitz constant L̂ = (‖ḡ‖/‖Δθ_prev‖) computed from the ratio of current mean gradient norm to the previous parameter change.  Proven upper bound: expected loss decreases if step length η ≤ 2 cos(α)/L̂, where α = arccos ρ.  We therefore set\n        lr_k = min(η_max,  2·cos(α)/(L̂+ε) )\n  with η_max=5e-5 to cap rare outliers.  This removes one manual hyper-parameter while retaining PAC safety.\nC. Anisotropy-aware scaling  –  Inside each block, scale the update by √(T_b / q_δ) exactly as in PAC-TURBO, so cleaner blocks move farther while noisy ones remain conservative.\nD. Implementation   –  Needs only 2·B extra scalars (g2_sum, L̂ per block); no extra forward/backward passes.  End-to-end ≈23 lines of Python.\nDefault settings: δ=0.05, ρ=0.9, GA_max=8, B=32; all hardware-agnostic.",
+        "experimental_design": {
+          "experiment_summary": "The experiment fine-tunes the 0.6-billion-parameter Qwen3 language model on the GSM8K mathematical-reasoning benchmark using low-rank adaptation (LoRA, rank = 8).  The goal is to demonstrate that the new μ-PACT optimiser yields faster and more reliable loss reduction than the currently best PAC-TURBO update rule, without any manual learning-rate tuning.  Each training step accumulates micro-batches until a block-wise sequential probability ratio test certifies that the averaged gradient is a descent direction with confidence 1 – δ.  When all blocks or the patience limit GA_max are accepted, μ-PACT computes a data-driven step size from the local Lipschitz estimate and performs the parameter update.  Performance is monitored every 100 optimiser steps by greedy decoding on the GSM8K dev set.  Energy consumption is logged continuously with nvidia-smi so that watt-hours until 15 % exact-match (EM) accuracy can be computed.  We run three random seeds for both μ-PACT and the baseline PAC-TURBO under identical hardware (single A100/H200, fp16) and training protocol (3 epochs, physical batch 8) to quantify accuracy, energy and convergence speed.",
+          "evaluation_metrics": [
+            {
+              "name": "Exact-match accuracy on GSM8K dev",
+              "description": "Correctness criteria: A generated answer is first post-processed by extracting the final numerical expression; the prediction is counted as correct if its canonicalised string exactly matches the ground-truth answer.  Calculation: EM = (number of correct predictions ÷ total dev problems) × 100.  Task appropriateness: GSM8K questions have a single unambiguous final answer, so exact matching faithfully reflects reasoning correctness.  Visualisations: plot EM versus training updates (learning curve) and bar chart of final EM with 95 % confidence intervals across seeds."
+            },
+            {
+              "name": "watt-hours to reach 15 % EM",
+              "description": "Correctness criteria: During training, cumulative energy consumption E(t) is obtained by integrating GPU power draw sampled every second via nvidia-smi.  The metric is the smallest E(t_k) where the interim dev EM ≥ 15 %.  Calculation: ∑_{i=1}^{k} (P_i × Δt_i) with P_i in kW and Δt_i=1 s until threshold met, reported in kWh.  Task appropriateness: Measures computational efficiency and sustainability—critical for low-resource labs.  Visualisations: energy-to-accuracy curve (watt-hours vs EM) and box-plot comparison across methods."
+            },
+            {
+              "name": "Exact-match accuracy on GSM8K dev; secondary: watt-hours to reach 15 % EM measured via NVIDIA-Smi power logs.",
+              "description": "Primary metric as specified in hypothesis: Exact-match accuracy on GSM8K dev; secondary: watt-hours to reach 15 % EM measured via NVIDIA-Smi power logs."
+            }
+          ],
+          "proposed_method": "μ-PACT (Micro-Adaptive, Parameter-Aware, Confidence-calibrated Training) is a drop-in PyTorch optimiser that extends the PAC-TURBO update rule.  1) Block-wise sequential test: LoRA weight matrices are flattened into B disjoint blocks.  For every micro-batch i, each block b accumulates its gradient sum g_sum[b] and squared-norm sum g2_sum[b].  The test statistic T_b = ‖ḡ_b‖² / (Var_b/(m)+ε) is compared to the chi-square cutoff q_δ(ρ).  An optimiser step is triggered when all blocks pass or the accumulation limit GA_max is reached.  2) Automatic step-length: After acceptance, the global Lipschitz proxy L̂ = ‖ḡ‖ / (‖Δθ_prev‖+ε) is computed.  The step size is lr_k = min(η_max, 2·cos(arccos ρ)/(L̂+ε)), guaranteeing non-increasing expected loss under bounded curvature.  3) Anisotropy scaling: Each block’s update is multiplied by √(T_b/q_δ) so that high-signal directions move farther.  4) Computation & memory: Only O(B) extra scalars are stored; the implementation is ≈23 lines and adds no forward/backward passes.  Default hyper-parameters (δ=0.05, ρ=0.9, GA_max=8, B=32, η_max=5e-5) are hardware-agnostic—no learning-rate tuning is required.",
+          "comparative_methods": [
+            "PAC-TURBO"
+          ],
+          "models_to_use": [
+            "Qwen3-0.6B"
+          ],
+          "datasets_to_use": [
+            "gsm8k"
+          ],
+          "hyperparameters_to_search": [
+            {
+              "name": "GA_max",
+              "range": "4,6,8,10"
+            },
+            {
+              "name": "rho",
+              "range": "0.85-0.95"
+            },
+            {
+              "name": "B (number_of_blocks)",
+              "range": "16,32,64"
+            },
+            {
+              "name": "eta_max",
+              "range": "3e-5-7e-5"
+            }
+          ]
+        },
+        "experiment_runs": [
+          {
+            "run_id": "proposed-iter1-Qwen3-0.6B-gsm8k",
+            "method_name": "proposed",
+            "model_name": "Qwen3-0.6B",
+            "dataset_name": "gsm8k"
+          },
+          {
+            "run_id": "comparative-1-iter1-Qwen3-0.6B-gsm8k",
+            "method_name": "comparative-1",
+            "model_name": "Qwen3-0.6B",
+            "dataset_name": "gsm8k"
+          }
+        ]
       }
     ]
   }
