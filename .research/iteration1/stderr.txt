@@ -221,3 +221,192 @@ Installed 100 packages in 7.32s
 Tokenising main/train (num_proc=4):   0%|          | 0/7473 [00:00<?, ? examples/s]Tokenising main/train (num_proc=4):   0%|          | 37/7473 [00:00<02:32, 48.87 examples/s]Tokenising main/train (num_proc=4):   4%|▍         | 292/7473 [00:00<00:16, 424.40 examples/s]Tokenising main/train (num_proc=4):  10%|▉         | 714/7473 [00:00<00:06, 1096.86 examples/s]Tokenising main/train (num_proc=4):  17%|█▋        | 1297/7473 [00:01<00:03, 2052.22 examples/s]Tokenising main/train (num_proc=4):  26%|██▌       | 1926/7473 [00:01<00:01, 2995.20 examples/s]Tokenising main/train (num_proc=4):  34%|███▍      | 2569/7473 [00:01<00:01, 3816.60 examples/s]Tokenising main/train (num_proc=4):  43%|████▎     | 3211/7473 [00:01<00:00, 4474.38 examples/s]Tokenising main/train (num_proc=4):  51%|█████     | 3799/7473 [00:01<00:00, 4640.57 examples/s]Tokenising main/train (num_proc=4):  59%|█████▊    | 4383/7473 [00:01<00:00, 4960.05 examples/s]Tokenising main/train (num_proc=4):  67%|██████▋   | 5013/7473 [00:01<00:00, 4876.04 examples/s]Tokenising main/train (num_proc=4):  75%|███████▌  | 5640/7473 [00:01<00:00, 5227.83 examples/s]Tokenising main/train (num_proc=4):  84%|████████▍ | 6280/7473 [00:01<00:00, 5546.27 examples/s]Tokenising main/train (num_proc=4):  93%|█████████▎| 6915/7473 [00:02<00:00, 5606.61 examples/s]Tokenising main/train (num_proc=4): 100%|██████████| 7473/7473 [00:02<00:00, 2955.00 examples/s]
 Tokenising main/test (num_proc=4):   0%|          | 0/1319 [00:00<?, ? examples/s]Tokenising main/test (num_proc=4):   3%|▎         | 37/1319 [00:00<00:25, 50.83 examples/s]Tokenising main/test (num_proc=4):  15%|█▌        | 204/1319 [00:00<00:03, 315.40 examples/s]Tokenising main/test (num_proc=4):  45%|████▍     | 587/1319 [00:00<00:00, 951.10 examples/s]Tokenising main/test (num_proc=4):  75%|███████▌  | 990/1319 [00:01<00:00, 1587.73 examples/s]Tokenising main/test (num_proc=4): 100%|██████████| 1319/1319 [00:01<00:00, 1727.52 examples/s]Tokenising main/test (num_proc=4): 100%|██████████| 1319/1319 [00:01<00:00, 916.78 examples/s] 
 The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Using CPython 3.11.13
+Creating virtual environment at: .venv
+Resolved 131 packages in 142ms
+Installed 100 packages in 5.22s
+ + accelerate==1.11.0
+ + aiohappyeyeballs==2.6.1
+ + aiohttp==3.13.2
+ + aiosignal==1.4.0
+ + alembic==1.17.2
+ + annotated-types==0.7.0
+ + antlr4-python3-runtime==4.9.3
+ + anyio==4.11.0
+ + attrs==25.4.0
+ + certifi==2025.11.12
+ + charset-normalizer==3.4.4
+ + click==8.3.1
+ + colorlog==6.10.1
+ + contourpy==1.3.3
+ + cycler==0.12.1
+ + datasets==4.4.1
+ + dill==0.4.0
+ + filelock==3.20.0
+ + fonttools==4.60.1
+ + frozenlist==1.8.0
+ + fsspec==2025.10.0
+ + gitdb==4.0.12
+ + gitpython==3.1.45
+ + greenlet==3.2.4
+ + h11==0.16.0
+ + hf-xet==1.2.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + huggingface-hub==0.36.0
+ + hydra-core==1.3.2
+ + idna==3.11
+ + jinja2==3.1.6
+ + joblib==1.5.2
+ + kiwisolver==1.4.9
+ + mako==1.3.10
+ + markupsafe==3.0.3
+ + matplotlib==3.10.7
+ + mpmath==1.3.0
+ + mu-pact-experiment==0.1.0 (from file:///home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa)
+ + multidict==6.7.0
+ + multiprocess==0.70.18
+ + networkx==3.5
+ + numpy==2.3.5
+ + nvidia-cublas-cu12==12.8.4.1
+ + nvidia-cuda-cupti-cu12==12.8.90
+ + nvidia-cuda-nvrtc-cu12==12.8.93
+ + nvidia-cuda-runtime-cu12==12.8.90
+ + nvidia-cudnn-cu12==9.10.2.21
+ + nvidia-cufft-cu12==11.3.3.83
+ + nvidia-cufile-cu12==1.13.1.3
+ + nvidia-curand-cu12==10.3.9.90
+ + nvidia-cusolver-cu12==11.7.3.90
+ + nvidia-cusparse-cu12==12.5.8.93
+ + nvidia-cusparselt-cu12==0.7.1
+ + nvidia-nccl-cu12==2.27.5
+ + nvidia-nvjitlink-cu12==12.8.93
+ + nvidia-nvshmem-cu12==3.3.20
+ + nvidia-nvtx-cu12==12.8.90
+ + omegaconf==2.3.0
+ + optuna==4.6.0
+ + packaging==25.0
+ + pandas==2.3.3
+ + peft==0.18.0
+ + pillow==12.0.0
+ + platformdirs==4.5.0
+ + propcache==0.4.1
+ + protobuf==6.33.1
+ + psutil==7.1.3
+ + pyarrow==22.0.0
+ + pydantic==2.12.4
+ + pydantic-core==2.41.5
+ + pyparsing==3.2.5
+ + python-dateutil==2.9.0.post0
+ + pytz==2025.2
+ + pyyaml==6.0.3
+ + regex==2025.11.3
+ + requests==2.32.5
+ + safetensors==0.7.0
+ + scikit-learn==1.7.2
+ + scipy==1.16.3
+ + seaborn==0.13.2
+ + sentry-sdk==2.45.0
+ + six==1.17.0
+ + smmap==5.0.2
+ + sniffio==1.3.1
+ + sqlalchemy==2.0.44
+ + sympy==1.14.0
+ + threadpoolctl==3.6.0
+ + tokenizers==0.22.1
+ + torch==2.9.1
+ + tqdm==4.67.1
+ + transformers==4.57.1
+ + triton==3.5.1
+ + typing-extensions==4.15.0
+ + typing-inspection==0.4.2
+ + tzdata==2025.2
+ + urllib3==2.5.0
+ + wandb==0.23.0
+ + xxhash==3.6.0
+ + yarl==1.22.0
+[I 2025-11-20 10:25:58,534] A new study created in memory with name: no-name-bec2af90-7d51-46d9-a187-4237b08eccda
+[W 2025-11-20 10:25:58,539] Trial 0 failed with parameters: {'mupact.ga_max': 8} because of the following error: ConfigKeyError("Key 'mupact' is not in struct\n    full_key: mupact\n    object_type=dict").
+Traceback (most recent call last):
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/optuna/study/_optimize.py", line 205, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/train.py", line 410, in <lambda>
+    study.optimize(lambda t: optuna_objective(t, cfg), n_trials=int(cfg.optuna.n_trials))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/train.py", line 369, in optuna_objective
+    assign(cfg, path, val)
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/train.py", line 355, in assign
+    cur = cur[p]
+          ~~~^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/dictconfig.py", line 371, in __getitem__
+    self._format_and_raise(
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/_utils.py", line 819, in format_and_raise
+    _raise(ex, cause)
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/dictconfig.py", line 369, in __getitem__
+    return self._get_impl(key=key, default_value=_DEFAULT_MARKER_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/dictconfig.py", line 442, in _get_impl
+    node = self._get_child(
+           ^^^^^^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/basecontainer.py", line 73, in _get_child
+    child = self._get_node(
+            ^^^^^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/dictconfig.py", line 475, in _get_node
+    self._validate_get(key)
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/dictconfig.py", line 164, in _validate_get
+    self._format_and_raise(
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/base.py", line 231, in _format_and_raise
+    format_and_raise(
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/_utils.py", line 899, in format_and_raise
+    _raise(ex, cause)
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/omegaconf/_utils.py", line 797, in _raise
+    raise ex.with_traceback(sys.exc_info()[2])  # set env var OC_CAUSE=1 for full trace
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+omegaconf.errors.ConfigKeyError: Key 'mupact' is not in struct
+    full_key: mupact
+    object_type=dict
+[W 2025-11-20 10:25:58,541] Trial 0 failed with value None.
+Error executing job with overrides: ['run=proposed-iter1-Qwen3-0.6B-gsm8k', 'results_dir=.research/iteration1', 'mode=full']
+Traceback (most recent call last):
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/train.py", line 410, in main
+    study.optimize(lambda t: optuna_objective(t, cfg), n_trials=int(cfg.optuna.n_trials))
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/optuna/study/study.py", line 490, in optimize
+    _optimize(
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/optuna/study/_optimize.py", line 67, in _optimize
+    _optimize_sequential(
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/optuna/study/_optimize.py", line 164, in _optimize_sequential
+    frozen_trial_id = _run_trial(study, func, catch)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/optuna/study/_optimize.py", line 262, in _run_trial
+    raise func_err
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/lib/python3.11/site-packages/optuna/study/_optimize.py", line 205, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/train.py", line 410, in <lambda>
+    study.optimize(lambda t: optuna_objective(t, cfg), n_trials=int(cfg.optuna.n_trials))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/train.py", line 369, in optuna_objective
+    assign(cfg, path, val)
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/train.py", line 355, in assign
+    cur = cur[p]
+          ~~~^^^
+omegaconf.errors.ConfigKeyError: Key 'mupact' is not in struct
+    full_key: mupact
+    object_type=dict
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Error executing job with overrides: ['run=proposed-iter1-Qwen3-0.6B-gsm8k', 'results_dir=.research/iteration1', 'mode=full']
+Traceback (most recent call last):
+  File "/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/src/main.py", line 26, in main
+    subprocess.run(cmd, cwd=root, check=True)
+  File "/home/toma/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/toma/pt80-1-a-29/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/bin/python3', '-u', '-m', 'src.train', 'run=proposed-iter1-Qwen3-0.6B-gsm8k', 'results_dir=.research/iteration1', 'mode=full']' returned non-zero exit status 1.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

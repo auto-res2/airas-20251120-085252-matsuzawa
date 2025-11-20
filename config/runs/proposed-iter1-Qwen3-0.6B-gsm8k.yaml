@@ -43,19 +43,19 @@ optuna:
   n_trials: 24
   direction: maximize
   search_space:
-    mupact.ga_max:
+    training.mupact.ga_max:
       type: int
       low: 4
       high: 10
       step: 2
-    mupact.rho:
+    training.mupact.rho:
       type: uniform
       low: 0.85
       high: 0.95
-    mupact.B:
+    training.mupact.B:
       type: categorical
       choices: [16, 32, 64]
-    mupact.eta_max:
+    training.mupact.eta_max:
       type: loguniform
       low: 3e-5
       high: 7e-5
