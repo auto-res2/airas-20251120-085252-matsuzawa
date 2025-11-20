@@ -1,0 +1,61 @@
+run_id: proposed-iter1-Qwen3-0.6B-gsm8k
+method: proposed
+model:
+  name: Qwen/Qwen3-0.6B
+  precision: fp16
+  adapter:
+    type: lora
+    rank: 8
+    blocks: 32
+dataset:
+  name: gsm8k
+  split:
+    train: main/train
+    validation: main/test
+  preprocessing:
+    prompt_style: chain-of-thought
+    max_length: 2048
+training:
+  epochs: 3
+  physical_batch_size: 8
+  gradient_accumulation_strategy: mupact  # dynamic, decided on the fly
+  optimizer:
+    name: adamw
+    betas: [0.9, 0.999]
+    weight_decay: 0.01
+  scheduler:
+    name: cosine
+    warmup_steps: 0
+  mupact:               # µ-PACT–specific knobs
+    delta: 0.05
+    rho: 0.9
+    ga_max: 8
+    eta_max: 5e-5
+    B: 32
+    eps: 1e-8
+evaluation:
+  eval_every_updates: 100
+  metrics: [exact_match, energy_to_15_em]
+hardware:
+  gpu_type: A100
+  num_gpus: 1
+optuna:
+  n_trials: 24
+  direction: maximize
+  search_space:
+    mupact.ga_max:
+      type: int
+      low: 4
+      high: 10
+      step: 2
+    mupact.rho:
+      type: uniform
+      low: 0.85
+      high: 0.95
+    mupact.B:
+      type: categorical
+      choices: [16, 32, 64]
+    mupact.eta_max:
+      type: loguniform
+      low: 3e-5
+      high: 7e-5

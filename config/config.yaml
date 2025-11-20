@@ -1,0 +1,28 @@
+# config/config.yaml – root Hydra configuration
+
+defaults:
+  - _self_
+
+run: null          # CLI-supplied run_id matching a file under config/runs/
+mode: full         # trial | full
+results_dir: ./results
+
+wandb:
+  entity: gengaru617-personal
+  project: 2025-11-20
+  mode: online     # auto-overridden in trial mode
+
+optuna:
+  n_trials: 0
+  direction: maximize
+  search_space: {}
+
+# Place-holders replaced by per-run config ------------------------------------
+method: baseline
+model: {}
+dataset: {}
+training: {}
+evaluation:
+  eval_every_updates: 100
+
+# EOF
