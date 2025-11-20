@@ -9,67 +9,130 @@
   ],
   "research_study_list": [
     {
-      "title": "AutoLRS: Automatic Learning-Rate Schedule by Bayesian Optimization on the Fly"
+      "title": "AutoLRS: Automatic Learning-Rate Schedule by Bayesian Optimization on the Fly",
+      "meta_data": {
+        "arxiv_id": "2105.10762"
+      }
     },
     {
-      "title": "Reverse engineering learned optimizers reveals known and novel mechanisms"
+      "title": "Reverse engineering learned optimizers reveals known and novel mechanisms",
+      "meta_data": {
+        "arxiv_id": "2011.02159"
+      }
     },
     {
-      "title": "Mechanic: A Learning Rate Tuner"
+      "title": "Mechanic: A Learning Rate Tuner",
+      "meta_data": {
+        "arxiv_id": "2306.00144"
+      }
     },
     {
-      "title": "MoMo: Momentum Models for Adaptive Learning Rates"
+      "title": "MoMo: Momentum Models for Adaptive Learning Rates",
+      "meta_data": {
+        "arxiv_id": "2305.07583"
+      }
     },
     {
-      "title": "Where Do Large Learning Rates Lead Us?"
+      "title": "Where Do Large Learning Rates Lead Us?",
+      "meta_data": {
+        "arxiv_id": "2410.22113"
+      }
     },
     {
-      "title": "QLoRA: Efficient Finetuning of Quantized LLMs"
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "meta_data": {
+        "arxiv_id": "2305.14314"
+      }
     },
     {
-      "title": "QA-LoRA: Quantization-Aware Low-Rank Adaptation of Large Language Models"
+      "title": "QA-LoRA: Quantization-Aware Low-Rank Adaptation of Large Language Models",
+      "meta_data": {
+        "arxiv_id": "2309.14717"
+      }
     },
     {
-      "title": "QuanTA: Efficient High-Rank Fine-Tuning of LLMs with Quantum-Informed Tensor Adaptation"
+      "title": "QuanTA: Efficient High-Rank Fine-Tuning of LLMs with Quantum-Informed Tensor Adaptation",
+      "meta_data": {
+        "arxiv_id": "2406.00132"
+      }
     },
     {
-      "title": "Evaluating Quantized Large Language Models"
+      "title": "Evaluating Quantized Large Language Models",
+      "meta_data": {
+        "arxiv_id": "2402.18158"
+      }
     },
     {
-      "title": "A Careful Examination of Large Language Model Performance on Grade School Arithmetic"
+      "title": "A Careful Examination of Large Language Model Performance on Grade School Arithmetic",
+      "meta_data": {
+        "arxiv_id": "2405.00332"
+      }
     },
     {
-      "title": "Language models are multilingual chain-of-thought reasoners"
+      "title": "Language models are multilingual chain-of-thought reasoners",
+      "meta_data": {
+        "arxiv_id": "2210.03057"
+      }
     },
     {
-      "title": "OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset"
+      "title": "OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset",
+      "meta_data": {
+        "arxiv_id": "2402.10176"
+      }
     },
     {
-      "title": "Evaluating Large Vision-and-Language Models on Children's Mathematical Olympiads"
+      "title": "Evaluating Large Vision-and-Language Models on Children's Mathematical Olympiads",
+      "meta_data": {
+        "arxiv_id": "2406.15736"
+      }
     },
     {
-      "title": "Learning Rate Schedules in the Presence of Distribution Shift"
+      "title": "Learning Rate Schedules in the Presence of Distribution Shift",
+      "meta_data": {
+        "arxiv_id": "2303.15634"
+      }
     },
     {
-      "title": "Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations"
+      "title": "Scaling Laws and Compute-Optimal Training Beyond Fixed Training Durations",
+      "meta_data": {
+        "arxiv_id": "2405.18392"
+      }
     },
     {
-      "title": "The Road Less Scheduled"
+      "title": "The Road Less Scheduled",
+      "meta_data": {
+        "arxiv_id": "2405.15682"
+      }
     },
     {
-      "title": "MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases"
+      "title": "MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases",
+      "meta_data": {
+        "arxiv_id": "2402.14905"
+      }
     },
     {
-      "title": "Rethinking Optimization and Architecture for Tiny Language Models"
+      "title": "Rethinking Optimization and Architecture for Tiny Language Models",
+      "meta_data": {
+        "arxiv_id": "2402.02791"
+      }
     },
     {
-      "title": "SparseLLM: Towards Global Pruning of Pre-trained Language Models"
+      "title": "SparseLLM: Towards Global Pruning of Pre-trained Language Models",
+      "meta_data": {
+        "arxiv_id": "2402.17946"
+      }
     },
     {
-      "title": "VeLoRA: Memory Efficient Training using Rank-1 Sub-Token Projections"
+      "title": "VeLoRA: Memory Efficient Training using Rank-1 Sub-Token Projections",
+      "meta_data": {
+        "arxiv_id": "2405.17991"
+      }
     },
     {
-      "title": "SqueezeLLM: Dense-and-Sparse Quantization"
+      "title": "SqueezeLLM: Dense-and-Sparse Quantization",
+      "meta_data": {
+        "arxiv_id": "2306.07629"
+      }
     }
   ]
 }
