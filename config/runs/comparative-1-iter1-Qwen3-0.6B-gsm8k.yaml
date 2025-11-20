@@ -45,12 +45,12 @@ optuna:
       type: loguniform
       low: 1e-5
       high: 5e-5
-    pac_turbo.ga_max:
+    training.pac_turbo.ga_max:
       type: int
       low: 2
       high: 10
       step: 2
-    pac_turbo.rho:
+    training.pac_turbo.rho:
       type: uniform
       low: 0.85
       high: 0.95

@@ -34,3 +34,7 @@ trainable params: 1,146,880 || all params: 597,196,800 || trainable%: 0.1920
 [2025-11-20 19:17:04,329][transformers.generation.configuration_utils][WARNING] - The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
 === [TRIAL RUN] PASSED for comparative-1-iter1-Qwen3-0.6B-gsm8k at Thu Nov 20 10:23:29 UTC 2025 ===
 
+=== [UV SYNC] Start at Thu Nov 20 10:25:18 AM UTC 2025 ===
+=== [UV SYNC] Finished successfully at Thu Nov 20 10:25:24 AM UTC 2025 ===
+=== [FULL EXPERIMENT] Start for comparative-1-iter1-Qwen3-0.6B-gsm8k at Thu Nov 20 10:25:24 AM UTC 2025 ===
+Launching training subprocess: /home/toma/t-80-8-b-03/_work/airas-20251120-085252-matsuzawa/airas-20251120-085252-matsuzawa/.venv/bin/python3 -u -m src.train run=comparative-1-iter1-Qwen3-0.6B-gsm8k results_dir=.research/iteration1 mode=full
