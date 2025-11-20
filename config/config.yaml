@@ -4,6 +4,7 @@ defaults:
   - _self_
 
 run: null          # CLI-supplied run_id matching a file under config/runs/
+run_id: null       # Run identifier from the run config file
 mode: full         # trial | full
 results_dir: ./results
 
@@ -24,5 +25,6 @@ dataset: {}
 training: {}
 evaluation:
   eval_every_updates: 100
+hardware: {}
 
 # EOF
